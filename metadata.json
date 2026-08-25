@@ -1,0 +1,6 @@
+{
+  "name": "DesignMySite",
+  "description": "Premium website designer and developer portfolio for DesignMySite (designmysite.in), showcasing modern business websites, services, and client acquisition.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
