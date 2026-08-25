@@ -10,17 +10,33 @@ interface ServicesSectionProps {
 export const ServicesSection: React.FC<ServicesSectionProps> = ({ onContactWithService }) => {
   const [selectedService, setSelectedService] = useState<ServiceItem | null>(null);
 
-  const getServiceIcon = (name: string) => {
+  const getServiceIconBadge = (name: string) => {
     switch (name) {
       case 'Layout':
-        return <Layout className="w-5 h-5" />;
+        return (
+          <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-blue-500 to-indigo-600 text-white flex items-center justify-center shadow-md shadow-indigo-200 group-hover:scale-110 transition-transform duration-300">
+            <Layout className="w-5 h-5 text-white" />
+          </div>
+        );
       case 'Code2':
-        return <Code2 className="w-5 h-5" />;
+        return (
+          <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#16A7B7] to-teal-600 text-white flex items-center justify-center shadow-md shadow-teal-200 group-hover:scale-110 transition-transform duration-300">
+            <Code2 className="w-5 h-5 text-white" />
+          </div>
+        );
       case 'ShoppingBag':
-        return <ShoppingBag className="w-5 h-5" />;
+        return (
+          <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-amber-500 to-orange-600 text-white flex items-center justify-center shadow-md shadow-orange-200 group-hover:scale-110 transition-transform duration-300">
+            <ShoppingBag className="w-5 h-5 text-white" />
+          </div>
+        );
       case 'Sparkles':
       default:
-        return <Sparkles className="w-5 h-5" />;
+        return (
+          <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-purple-500 to-fuchsia-600 text-white flex items-center justify-center shadow-md shadow-purple-200 group-hover:scale-110 transition-transform duration-300">
+            <Sparkles className="w-5 h-5 text-white" />
+          </div>
+        );
     }
   };
 
@@ -53,9 +69,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onContactWithS
           >
             {/* Top Row: Icon + Number & Arrow */}
             <div className="flex items-center justify-between mb-6">
-              <div className="w-12 h-12 rounded-2xl bg-[#FAFAF8] group-hover:bg-[#E6F7F9] text-[#202020] group-hover:text-[#16A7B7] flex items-center justify-center border border-[#EBEBEB] transition-colors duration-300">
-                {getServiceIcon(service.iconName)}
-              </div>
+              {getServiceIconBadge(service.iconName)}
               
               <div className="flex items-center gap-3">
                 <span className="text-xs font-bold tracking-widest text-[#777777] group-hover:text-[#16A7B7] transition-colors">

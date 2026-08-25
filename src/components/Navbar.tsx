@@ -82,7 +82,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBookCall, onNavigateTo }) 
           <button
             id="nav-book-call-btn"
             onClick={onOpenBookCall}
-            className="bg-[#202020] hover:bg-[#16A7B7] text-white text-xs sm:text-sm font-medium px-5 sm:px-6 py-2.5 rounded-full transition-all duration-300 flex items-center gap-1.5 shadow-sm hover:shadow-md cursor-pointer hover:scale-[1.02] active:scale-[0.98]"
+            className="bg-[#000000] hover:bg-[#16A7B7] text-white text-xs sm:text-sm font-bold px-5 sm:px-6 h-[52px] leading-4 border border-[#000000] translate-x-1.5 rounded-full transition-all duration-300 flex items-center gap-1.5 shadow-sm hover:shadow-md cursor-pointer hover:scale-[1.02] active:scale-[0.98]"
           >
             <span>Book a Call</span>
             <ArrowUpRight className="w-3.5 h-3.5" />

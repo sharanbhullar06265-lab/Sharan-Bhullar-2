@@ -1,5 +1,5 @@
 import React from 'react';
-import { Palette, Smartphone, Target, TrendingUp, CheckCircle, ArrowRight } from 'lucide-react';
+import { Palette, Smartphone, Target, Zap, CheckCircle } from 'lucide-react';
 import { whyWorkWithMe } from '../data/servicesData';
 
 interface WhyWorkWithMeProps {
@@ -7,17 +7,33 @@ interface WhyWorkWithMeProps {
 }
 
 export const WhyWorkWithMe: React.FC<WhyWorkWithMeProps> = ({ onContactClick }) => {
-  const getIcon = (idx: number) => {
+  const getIconBadge = (idx: number) => {
     switch (idx) {
       case 0:
-        return <Palette className="w-5 h-5" />;
+        return (
+          <div className="w-11 h-11 rounded-2xl bg-gradient-to-br from-rose-500 to-pink-600 text-white flex items-center justify-center shadow-md shadow-pink-200 group-hover:scale-110 transition-transform duration-300">
+            <Palette className="w-5 h-5 text-white" />
+          </div>
+        );
       case 1:
-        return <Smartphone className="w-5 h-5" />;
+        return (
+          <div className="w-11 h-11 rounded-2xl bg-gradient-to-br from-cyan-500 to-blue-600 text-white flex items-center justify-center shadow-md shadow-cyan-200 group-hover:scale-110 transition-transform duration-300">
+            <Smartphone className="w-5 h-5 text-white" />
+          </div>
+        );
       case 2:
-        return <Target className="w-5 h-5" />;
+        return (
+          <div className="w-11 h-11 rounded-2xl bg-gradient-to-br from-violet-500 to-purple-600 text-white flex items-center justify-center shadow-md shadow-purple-200 group-hover:scale-110 transition-transform duration-300">
+            <Target className="w-5 h-5 text-white" />
+          </div>
+        );
       case 3:
       default:
-        return <TrendingUp className="w-5 h-5" />;
+        return (
+          <div className="w-11 h-11 rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-600 text-white flex items-center justify-center shadow-md shadow-emerald-200 group-hover:scale-110 transition-transform duration-300">
+            <Zap className="w-5 h-5 text-white" />
+          </div>
+        );
     }
   };
 
@@ -51,9 +67,7 @@ export const WhyWorkWithMe: React.FC<WhyWorkWithMeProps> = ({ onContactClick }) 
             <div>
               {/* Card top bar */}
               <div className="flex items-center justify-between mb-6">
-                <div className="w-10 h-10 rounded-2xl bg-[#FAFAF8] group-hover:bg-[#E6F7F9] text-[#202020] group-hover:text-[#16A7B7] flex items-center justify-center border border-[#EAEAEA] transition-colors">
-                  {getIcon(idx)}
-                </div>
+                {getIconBadge(idx)}
                 <span className="text-xs font-bold text-[#999999] tracking-wider">
                   {item.number}
                 </span>
